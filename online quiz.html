@@ -1,0 +1,328 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Quiz System</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+        }
+
+        /* Header */
+        header {
+            background-color: #243b64;
+            color: white;
+            padding: 25px 8%;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        header p {
+            margin-top: 6px;
+            color: #d9e2f2;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: 35px auto;
+        }
+
+        /* Welcome */
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .welcome h2 {
+            color: #243b64;
+            margin-bottom: 8px;
+        }
+
+        /* Progress Bar */
+        .progress {
+            background: #e5e8ef;
+            height: 8px;
+            border-radius: 10px;
+            margin-top: 18px;
+        }
+
+        .progress-bar {
+            background: #3b6edc;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        /* Question */
+        .question {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .question h3 {
+            color: #243b64;
+            margin-bottom: 15px;
+        }
+
+        /* Options */
+        label {
+            display: block;
+            border: 1px solid #dfe3eb;
+            padding: 13px;
+            margin: 9px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #222;
+            background: white;
+        }
+
+        label:hover {
+            background: #f1f5ff;
+            border-color: #3b6edc;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        /* Button */
+        button {
+            display: block;
+            margin: 25px auto;
+            padding: 13px 35px;
+            background: #3b6edc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2c57b5;
+        }
+
+        /* Result */
+        #result {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+            color: #243b64;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>ONLINE QUIZ SYSTEM</h1>
+
+        <p>Test Your Knowledge With My Online Quiz</p>
+
+    </header>
+
+
+    <!-- Main Container -->
+
+    <div class="container">
+
+
+        <!-- Welcome Section -->
+
+        <div class="welcome">
+
+            <h2>GENERAL KNOWLEDGE QUIZ</h2>
+
+            <p>
+                Answer all questions and click Submit Quiz
+                to view your score.
+            </p>
+
+            <div class="progress">
+
+                <div class="progress-bar"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Question 1 -->
+
+        <div class="question">
+
+            <h3>1. What does HTML stand for?</h3>
+
+            <label>
+                <input type="radio" name="q1" value="correct">
+                Hyper Text Markup Language
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="wrong">
+                High Text Machine Language
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="wrong">
+                Hyperlink Text Management Language
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="wrong">
+                Home Tool Markup Language
+            </label>
+
+        </div>
+
+
+        <!-- Question 2 -->
+
+        <div class="question">
+
+            <h3>2. Which language is used to style a webpage?</h3>
+
+            <label>
+                <input type="radio" name="q2" value="wrong">
+                HTML
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="correct">
+                CSS
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="wrong">
+                C++
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="wrong">
+                Python
+            </label>
+
+        </div>
+
+
+        <!-- Question 3 -->
+
+        <div class="question">
+
+            <h3>3. Which tag is used to create a hyperlink?</h3>
+
+            <label>
+                <input type="radio" name="q3" value="wrong">
+                &lt;p&gt;
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="wrong">
+                &lt;h1&gt;
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="correct">
+                &lt;a&gt;
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="wrong">
+                &lt;img&gt;
+            </label>
+
+        </div>
+
+
+        <!-- Submit Button -->
+
+        <button onclick="checkQuiz()">
+            Submit Quiz
+        </button>
+
+
+        <!-- Result -->
+
+        <div id="result">
+            Your result will appear here.
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+        © 2026 Online Quiz System
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function checkQuiz() {
+
+            var score = 0;
+
+            var answers = document.querySelectorAll(
+                'input[type="radio"]:checked'
+            );
+
+            answers.forEach(function(answer) {
+
+                if (answer.value == "correct") {
+                    score++;
+                }
+
+            });
+
+            document.getElementById("result").innerHTML =
+                "<h2>Quiz Completed!</h2>" +
+                "<p>Your Score: <b>" +
+                score +
+                " / 3</b></p>";
+
+        }
+    </script>
+</body>
+</html>
